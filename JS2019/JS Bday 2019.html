@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+		font-family: Monaco, Comic Sans sans-serif;
+		background: linear-gradient(270deg, #183fd9, #19d5e8, #2a0fbf, #6aa4e6);
+		background-size: 800% 800%;
+		text-align: center;
+		padding: 5%;
+
+		-webkit-animation: BlueBkgd 15s ease infinite;
+		-moz-animation: BlueBkgd 15s ease infinite;
+		animation: BlueBkgd 15s ease infinite;
+
+		@-webkit-keyframes BlueBkgd {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 50%}
+			100%{background-position:0% 50%}
+		}
+		@-moz-keyframes BlueBkgd {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 50%}
+			100%{background-position:0% 50%}
+		}
+		@keyframes BlueBkgd {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 50%}
+			100%{background-position:0% 50%}
+		}
+	}
+	
+/*hyperlinks style*/
+	.a {
+		transition: 0.3s;
+		text-decoration-line: underline;
+		text-decoration-style: dashed;
+		font-weight: 550;
+		background-color: purple;
+		color: pink;
+		}
+
+	a:link {
+		text-decoration-line: underline;
+		text-decoration-style: dashed;
+		font-weight: 550;
+		color: pink;
+		background-color: purple;
+		}
+	
+	a:hover {
+		opacity: 0.7;
+		font-style: italic;
+		}
+	
+/* text style for opening media*/
+	.openMedia {
+		  cursor: crosshair;
+		  transition: 0.3s;
+		  text-decoration-line: underline;
+		  text-decoration-style: dashed;
+		  font-weight: 550;
+		  background-color: pink;
+		  border:5pt;
+		  border-radius: 6pt;
+		}
+
+	.openMedia:hover {
+		opacity: 0.7;
+		font-style: italic;
+		}
+
+/* style for div carrying media*/		
+	.myMedia {
+		display: none; /* Hidden by default */
+		left: 0;
+		top: 0;
+		padding: 10pt /*gap from text and other elements*/
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		max-height: 180pt
+		}
+
+/* style for div content (media) */
+	.myMedia-content {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 300px;
+		background: url("JS2019/Glitter.gif")
+		}
+
+/* style for div caption */
+	.myMedia-caption {
+		  margin: auto;
+		  display: block;
+		  text-align: center;
+		  font-size: 48pt;
+		  font-weight: 600;
+		  width: 90%;
+		  color: red;
+		  padding: 10px 0;
+		  height: 50px;
+		}
+
+/* Add Animation */
+		.myMedia-content, .myMedia-caption {  
+		  -webkit-animation-name: zoom;
+		  -webkit-animation-duration: 0.6s;
+		  animation-name: zoom;
+		  animation-duration: 0.6s;
+		}
+
+		@-webkit-keyframes zoom {
+		  from {-webkit-transform:scale(0)} 
+		  to {-webkit-transform:scale(1)}
+		}
+
+		@keyframes zoom {
+		  from {transform:scale(0)} 
+		  to {transform:scale(1)}
+		}
+
+	}</style>
+</head>
+
+<body>
+
+	<h2>Hello bb :)</h2>
+
+	<div>
+		<span onclick="showMedia1()" id="Span1" class="openMedia">
+		<img id="myImg" src="/JS2019/Blue Heart.gif" 
+			alt="paiseh cannot load" style="width:100%;max-width:300px">
+		</span>
+			<div id="Media1" class="myMedia">
+			<img id="img1" class="myMedia-content"
+			src="https://img1.onthesnow.com/image/xl/88/snow_buried_timberline_lodge_sits_mt_88044.jpg" alt="Snow">
+				<div class=myMedia-caption>Happy Birthday, <br>
+				my lovely old man!</div>
+			</div>
+		<script>
+//summon Media1; show n hide
+	function showMedia1() {
+		var x = document.getElementById("Media1");
+		if (x.style.display === "block") {
+			x.style.display = "none";
+		} else {
+			x.style.display = "block";
+		}
+	}</script>
+	</div>
+
+</body>
+</html>
