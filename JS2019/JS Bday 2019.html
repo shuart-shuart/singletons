@@ -5,151 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 	body {
-		font-family: Monaco, Comic Sans sans-serif;
-		background: linear-gradient(270deg, #183fd9, #19d5e8, #2a0fbf, #6aa4e6);
-		background-size: 800% 800%;
-		text-align: center;
-		padding: 5%;
-
-		-webkit-animation: BlueBkgd 15s ease infinite;
-		-moz-animation: BlueBkgd 15s ease infinite;
-		animation: BlueBkgd 15s ease infinite;
-
-		@-webkit-keyframes BlueBkgd {
-			0%{background-position:0% 50%}
-			50%{background-position:100% 50%}
-			100%{background-position:0% 50%}
-		}
-		@-moz-keyframes BlueBkgd {
-			0%{background-position:0% 50%}
-			50%{background-position:100% 50%}
-			100%{background-position:0% 50%}
-		}
-		@keyframes BlueBkgd {
-			0%{background-position:0% 50%}
-			50%{background-position:100% 50%}
-			100%{background-position:0% 50%}
-		}
+	font-family: comic sans;
+	background: url("Bkgd.gif");
+	background-size: 100%;
+	background-color: blue;
+	cursor: url("MainCur.ani")
 	}
 	
-/*hyperlinks style*/
-	.a {
-		transition: 0.3s;
-		text-decoration-line: underline;
-		text-decoration-style: dashed;
-		font-weight: 550;
-		background-color: purple;
-		color: pink;
-		}
-
-	a:link {
-		text-decoration-line: underline;
-		text-decoration-style: dashed;
-		font-weight: 550;
-		color: pink;
-		background-color: purple;
-		}
+	.pop{
+	text-align: center;
+	background: url("HPBD.gif")
+	background-size: 100%;
+	opacity: 0.5;
+	width: 40%;
+	}
 	
-	a:hover {
-		opacity: 0.7;
-		font-style: italic;
-		}
-	
-/* text style for opening media*/
-	.openMedia {
-		  cursor: crosshair;
-		  transition: 0.3s;
-		  text-decoration-line: underline;
-		  text-decoration-style: dashed;
-		  font-weight: 550;
-		  background-color: pink;
-		  border:5pt;
-		  border-radius: 6pt;
-		}
+	.glow {
+	  font-size: 30px;
+	  color: #b0ccff;
+	  text-align: center;
+	  -webkit-animation: glow 1s ease-in-out infinite alternate;
+	  -moz-animation: glow 1s ease-in-out infinite alternate;
+	  animation: glow 1s ease-in-out infinite alternate;
+	}
 
-	.openMedia:hover {
-		opacity: 0.7;
-		font-style: italic;
-		}
-
-/* style for div carrying media*/		
-	.myMedia {
-		display: none; /* Hidden by default */
-		left: 0;
-		top: 0;
-		padding: 10pt /*gap from text and other elements*/
-		width: 100%; /* Full width */
-		height: 100%; /* Full height */
-		max-height: 180pt
-		}
-
-/* style for div content (media) */
-	.myMedia-content {
-		margin: auto;
-		display: block;
-		width: 80%;
-		max-width: 300px;
-		}
-
-/* style for div caption */
-	.myMedia-caption {
-		margin: auto;
-		display: block;
-		text-align: center;
-		font-size: 48pt;
-		font-weight: 600;
-		width: 90%;
-		color: red;
-		padding: 10px 0;
-		height: 50px;
-		background: url("JS2019/Glitter.gif")
-		}
-
-/* Add Animation */
-		.myMedia-content, .myMedia-caption {  
-		  -webkit-animation-name: zoom;
-		  -webkit-animation-duration: 0.6s;
-		  animation-name: zoom;
-		  animation-duration: 0.6s;
-		}
-
-		@-webkit-keyframes zoom {
-		  from {-webkit-transform:scale(0)} 
-		  to {-webkit-transform:scale(1)}
-		}
-
-		@keyframes zoom {
-		  from {transform:scale(0)} 
-		  to {transform:scale(1)}
-		}
+	@-webkit-keyframes glow {
+	  from {
+		text-shadow: 0 0 10px #b0ccff, 0 0 20px #b0ccff, 0 0 30px #00a4db, 0 0 40px #00a4db, 0 0 50px #00a4db, 0 0 60px #00a4db, 0 0 70px #00a4db;
+	  }
+	  to {
+		text-shadow: 0 0 20px #b0ccff, 0 0 30px #005bdb, 0 0 40px #005bdb, 0 0 50px #005bdb, 0 0 60px #005bdb, 0 0 70px #005bdb, 0 0 80px #005bdb;
+	  }
+	}
 
 	}</style>
 </head>
 
-<body>
+<body class="glow">
 
-	<h2>Hello bb :)</h2>
-
-	<div>
-		<span onclick="showMedia1()" id="Span1" class="openMedia">
+	<div onclick="HPBD()">
 		<img id="myImg" src="Blue Heart.gif" 
 			alt="paiseh cannot load" style="width:100%;max-width:300px">
-		</span>
-			<div id="Media1" class="myMedia">
-				<div class=myMedia-caption>Happy Birthday, <br>
-				my lovely old man!</div>
-			</div>
 		<script>
-//summon Media1; show n hide
-	function showMedia1() {
-		var x = document.getElementById("Media1");
+	function HPBD() {
+		var HPBD = document.getElementById("HPBD");
 		if (x.style.display === "block") {
 			x.style.display = "none";
 		} else {
-			x.style.display = "block";
+			x.Timeout = 2000;
 		}
-	}</script>
+		}</script>
 	</div>
+	
+
+<div id="HPBD" class="pop">
+	<p class="glow">
+	Happy Birthday <br> my lovely old man!
+	</p>
+</div>
 
 </body>
 </html>
