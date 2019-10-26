@@ -4,20 +4,120 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
+	html{
+	cursor: crosshair;
+	}
 	body {
 	font-family: comic sans;
 	background: url("Bkgd.gif");
 	background-size: 100%;
 	background-color: blue;
-	cursor: url("MainCur.ani")
+	animation: animate 0.25s infinite;
+	}
+
+	@keyframes animate{
+	  0%{ 
+		cursor: url("MainCur/Derpy_1.png"), auto;
+	  }
+	  6%{ 
+		cursor: url("MainCur/Derpy_2.png"), auto;
+	  }
+	  12%{ 
+		cursor: url("MainCur/Derpy_3.png"), auto;
+	  }
+	  16%{ 
+		cursor: url("MainCur/Derpy_4.png"), auto;
+	  }
+	  20%{ 
+		cursor: url("MainCur/Derpy_5.png"), auto;
+	  }
+	  24%{ 
+		cursor: url("MainCur/Derpy_6.png"), auto;
+	  }
+	  28%{ 
+		cursor: url("MainCur/Derpy_7.png"), auto;
+	  }
+	  32%{ 
+		cursor: url("MainCur/Derpy_8.png"), auto;
+	  }
+	  36%{ 
+		cursor: url("MainCur/Derpy_9.png"), auto;
+	  }
+	  40%{ 
+		cursor: url("MainCur/Derpy_10.png"), auto;
+	  }
+	  44%{ 
+		cursor: url("MainCur/Derpy_11.png"), auto;
+	  }
+	  48%{ 
+		cursor: url("MainCur/Derpy_12.png"), auto;
+	  }
+	  52%{ 
+		cursor: url("MainCur/Derpy_13.png"), auto;
+	  }
+	  56%{ 
+		cursor: url("MainCur/Derpy_14.png"), auto;
+	  }
+	  60%{ 
+		cursor: url("MainCur/Derpy_15.png"), auto;
+	  }
+	  64%{ 
+		cursor: url("MainCur/Derpy_16.png"), auto;
+	  }
+	  68%{ 
+		cursor: url("MainCur/Derpy_17.png"), auto;
+	  }
+	  72%{ 
+		cursor: url("MainCur/Derpy_18.png"), auto;
+	  }
+	  76%{ 
+		cursor: url("MainCur/Derpy_19.png"), auto;
+	  }
+	  80%{ 
+		cursor: url("MainCur/Derpy_20.png"), auto;
+	  }
+	  84%{ 
+		cursor: url("MainCur/Derpy_21.png"), auto;
+	  }
+	  88%{ 
+		cursor: url("MainCur/Derpy_22.png"), auto;
+	  }
+	  94%{ 
+		cursor: url("MainCur/Derpy_23.png"), auto;
+	  }
+	  100%{ 
+		cursor: url("MainCur/Derpy_24.png"), auto;
+	  }
 	}
 	
 	.pop{
+	display: none;
 	text-align: center;
-	background: url("HPBD.gif")
 	background-size: 100%;
-	opacity: 0.5;
-	width: 40%;
+	width: 100%;
+	z-index: 1;
+	padding-top: 10pt;
+	float: center;
+	}
+	
+	.hidden{
+	opacity: 0;
+	}
+	
+	.hidden:hover{
+	opacity: 1;
+	}
+	
+	#Tickle:hover{
+	cursor: url("Tickle.png"), grab;
+	}
+	
+	#Kiss:hover{
+	cursor: url("Kiss.png"), zoom-in;
+	}
+	
+	#HPBD:hover{
+	cursor: url("MainCur.png"), auto;
 	}
 	
 	.glow {
@@ -42,27 +142,53 @@
 </head>
 
 <body class="glow">
+<table style="width:100%" "table-layout:fixed" "empty-cells:show">
+  <tr { style="height: 33%" } >
+    <th { style="width: 33%" }></th>
+    <th { style="width: 33%" }><br><br></th> 
+    <th { style="width: 33%" }></th>
+  </tr>
+  <tr { style="height: 33%" } >
+    <td>
+    	<div id="Tickle" class="hidden">
+			<img id="Tickle" src="Tickle.gif"  
+				alt="paiseh cannot load" style="width:100%">
+		</div>
+    </td>
+    <td>
+		<div onclick="HPBD()">
+			<img src="Blue Heart.gif" 
+				alt="paiseh cannot load" style="width:100%;max-width:300px">
+			<script>
+		function HPBD() {
+			HPBD = document.getElementById("HPBD");
+			HPBD.style.display = "block";
+			}</script>
+		</div>
+	</td>
+    <td>
+    	<div class="hidden">
+			<img id="Kiss" src="Kiss.gif" 
+				alt="paiseh cannot load" style="width:100%">
+		</div>
+	</td>
+  </tr { style="height: 33%" } >
+  <tr>
+    <td></td>
+    <td>
+		<div id="HPBD" class="pop">
+		<p class="glow">
+		Happy Birthday <br> my lovely old man!
+		</p>
+		</div>
+	</td>
+    <td></td>
+  </tr>
+</table>
 
-	<div onclick="HPBD()">
-		<img id="myImg" src="Blue Heart.gif" 
-			alt="paiseh cannot load" style="width:100%;max-width:300px">
-		<script>
-	function HPBD() {
-		var HPBD = document.getElementById("HPBD");
-		if (x.style.display === "block") {
-			x.style.display = "none";
-		} else {
-			x.Timeout = 2000;
-		}
-		}</script>
-	</div>
-	
-
-<div id="HPBD" class="pop">
-	<p class="glow">
-	Happy Birthday <br> my lovely old man!
-	</p>
-</div>
+<iframe height="15" src="https://www.youtube.com/embed/7KPfOVw3JwY?autoplay=1" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+style="opacity:0"></iframe>
 
 </body>
 </html>
