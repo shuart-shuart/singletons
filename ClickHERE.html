@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Arrival</title>
+    <style>
+        body {
+            font-family: corbel, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fde0e3; /* light pink background */
+            text-align: center;
+        }
+
+        #giftImage {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #dbc3e5; /* light purple background */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            border: 2px solid #5d487f; /* dark purple border */
+            border-radius: 5px;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        #popupMessage {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #closeButton {
+            background-color: #5d487f; /* dark purple background */
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid #5d487f; /* dark purple border */
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay"></div>
+
+    <div id="popup">
+        <p id="popupMessage">Hi Jess, your gift is arriving soon!</p>
+        <button id="closeButton" onclick="closePopup()">Close</button>
+    </div>
+
+    <img id="giftImage" src="https://media.giphy.com/media/xTkcEWNonWfpTsBy8g/giphy.gif" alt="Gift Image" onclick="showPopup()">
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
